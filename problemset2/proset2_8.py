@@ -2,14 +2,19 @@
 # evaluates it using eval, and prints the result. It should continue until the user enters 'done', and
 # then return the value of the last expression it evaluated.
 
-def eval_loop(val1):
-    return eval(val1)
-res=''
-while True:
-    string1=input()
+def eval_loop(string1):
+    res=''
     if string1=="done":
-        break
+        return False
     else:
         res=eval(string1)
-        print(res)
-print(res)
+        return res
+list1=[]
+while True:
+    string1=str(input())
+    result=eval_loop(string1)
+    if result != False:
+        print(result)
+        list1.append(result)
+    else:
+        print(list1[len(list1)-1])
