@@ -1,0 +1,108 @@
+1)Write a Python program to combine each line from first file with the corresponding line in second file
+
+def combine_file():
+	list1=[]
+	f1=open("file1.txt","r")
+	f2=open("file2.txt","r")
+	for line in range(len(f1)):
+		list1.append(f1[line])
+		list1.append(f2[line])
+	f3=open("file3.txt","w")
+	f3.writelines(list1)
+	close(f1)
+	close(f2)
+	close(f3)
+combine_file()	
+
+2)Count new lines in file
+
+def read_new_line(f1):
+	count=0
+	for line in f1.read():
+		count+=1
+	print(count-1)
+
+f1=open("file1.txt","r")
+read_new_line(f1)
+close(f1)
+
+3)Write a Python function that accepts a string and calculate the number of upper case letters and lower case letters.
+
+def countof_upper_lower(string):
+	count1=0
+	count2=0
+	for character in string:
+		if character.isupper():
+			count1+=1
+		elif character.islower():
+			count2+=1
+		else:
+			print("plz enter characters")
+	print("No.of upper char count:",count1,"No of lower char count:",count2)
+	
+string=input('Enter string:')
+print(countof_upper_lower(string))
+
+4)Write a Python function that takes a list and returns a new list with unique elements of the first list. Without using set
+def unique_character(list1):
+	list2=[]
+	for i in list1:
+		if i not in list2:
+			list2.append(i)
+	return list2
+
+list1=[]
+for val in range(1,10):
+	value1=input('Enter value:')
+	list1.append(value1)
+print(unique_character(list1))
+
+5)Write a Python function to check whether a string is a pangram or not. 
+
+def panagram(string1):
+	list1=['a','b','c',d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+	for character in list1:
+		if character in string:
+			return True
+		else:
+			return False
+	
+string=input('Enter String:')
+string1=string.lower()
+print(panagram(string1))
+
+6)Write a Python program that accepts a hyphen-separated sequence of words as input and prints the words in a hyphen-separated sequence after sorting 
+
+def sorted_value(list1):
+	list2=sorted(list1)
+	sorted_string="-".join(list2)
+	return sorted_string
+	
+string=input('Enter string:')
+list1=string.split("-")
+print(sorted_value(list1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
